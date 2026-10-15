@@ -1,4 +1,4 @@
-package com.dadoLivre.api.model;
+package com.dadoLivre.api.model.enums;
 
 public enum TipoUsuario {
     ELEITOR,
