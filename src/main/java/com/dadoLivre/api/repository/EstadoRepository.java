@@ -1,4 +1,9 @@
 package com.dadoLivre.api.repository;
 
-public interface EstadoRepository {
+import com.dadoLivre.api.model.Estado;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.UUID;
+
+public interface EstadoRepository extends JpaRepository<Estado, UUID> {
 }
