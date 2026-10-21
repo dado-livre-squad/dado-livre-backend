@@ -1,4 +1,9 @@
 package com.dadoLivre.api.repository;
 
-public class EncarregadoDadosRepository {
+import com.dadoLivre.api.model.EncarregadoDados;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.UUID;
+
+public interface EncarregadoDadosRepository extends JpaRepository<EncarregadoDados, UUID> {
 }
