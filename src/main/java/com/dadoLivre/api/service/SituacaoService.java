@@ -1,7 +1,7 @@
 package com.dadoLivre.api.service;
 
 import com.dadoLivre.api.exception.ResourceNotFoundException;
-import com.dadoLivre.api.model.Situacao;
+import com.dadoLivre.api.model.entities.Situacao;
 import com.dadoLivre.api.repository.SituacaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

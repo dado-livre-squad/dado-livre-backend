@@ -1,4 +1,4 @@
-package com.dadoLivre.api.model;
+package com.dadoLivre.api.model.entities;
 
 import jakarta.persistence.*;
 import lombok.*;

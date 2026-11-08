@@ -1,7 +1,7 @@
 package com.dadoLivre.api.service;
 
 import com.dadoLivre.api.exception.ResourceNotFoundException;
-import com.dadoLivre.api.model.Partido;
+import com.dadoLivre.api.model.entities.Partido;
 import com.dadoLivre.api.repository.PartidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

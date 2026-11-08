@@ -1,4 +1,5 @@
 package com.dadoLivre.api.dto.estado;
 
-public class EstadoResponseDto {
-}
+import java.util.UUID;
+
+public record EstadoResponseDTO(UUID id, String nome, String sigla) {}

@@ -1,6 +1,6 @@
 package com.dadoLivre.api.controller;
 
-import com.dadoLivre.api.model.Partido;
+import com.dadoLivre.api.model.entities.Partido;
 import com.dadoLivre.api.service.PartidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

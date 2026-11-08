@@ -1,6 +1,6 @@
 package com.dadoLivre.api.controller;
 
-import com.dadoLivre.api.model.Estado;
+import com.dadoLivre.api.dto.estado.EstadoResponseDTO;
 import com.dadoLivre.api.service.EstadoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +17,7 @@ public class EstadoController {
     public EstadoService service;
 
     @GetMapping("/v1")
-    public List<Estado> findAll() {
-        return this.service.findAll();
+    public List<EstadoResponseDTO> listarEstados() {
+        return this.service.listarEstados();
     }
 }

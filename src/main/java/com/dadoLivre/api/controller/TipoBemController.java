@@ -1,6 +1,6 @@
 package com.dadoLivre.api.controller;
 
-import com.dadoLivre.api.model.TipoBem;
+import com.dadoLivre.api.model.entities.TipoBem;
 import com.dadoLivre.api.service.TipoBemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,6 +1,5 @@
-package com.dadoLivre.api.model;
+package com.dadoLivre.api.model.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 

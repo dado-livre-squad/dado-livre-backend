@@ -1,6 +1,6 @@
 package com.dadoLivre.api.controller;
 
-import com.dadoLivre.api.model.EncarregadoDados;
+import com.dadoLivre.api.model.entities.EncarregadoDados;
 import com.dadoLivre.api.service.EncarregadoDadosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

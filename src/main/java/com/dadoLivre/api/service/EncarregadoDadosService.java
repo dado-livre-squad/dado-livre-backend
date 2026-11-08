@@ -1,6 +1,6 @@
 package com.dadoLivre.api.service;
 
-import com.dadoLivre.api.model.EncarregadoDados;
+import com.dadoLivre.api.model.entities.EncarregadoDados;
 import com.dadoLivre.api.repository.EncarregadoDadosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
