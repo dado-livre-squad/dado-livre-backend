@@ -9,13 +9,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
 @Table(name = "candidato")
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Candidato {
 
     @Id
@@ -100,4 +99,7 @@ public class Candidato {
     @ManyToOne
     @JoinColumn(name = "est_id")
     private Estado estado;
+
+    @OneToMany(mappedBy = "candidato", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RedeSocial> redeSocials;
 }
