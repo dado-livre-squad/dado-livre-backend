@@ -1,9 +1,9 @@
-package com.exemplo.repository;
+package com.dadoLivre.api.repository;
 
-import com.exemplo.model.TipoBem;
+import com.dadoLivre.api.model.entities.TipoBem;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface TipoBemRepository extends JpaRepository<TipoBem, String> {
+import java.util.UUID;
+
+public interface TipoBemRepository extends JpaRepository<TipoBem, UUID> {
 }

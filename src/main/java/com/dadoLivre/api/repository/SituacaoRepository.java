@@ -1,9 +1,9 @@
-package com.exemplo.repository;
+package com.dadoLivre.api.repository;
 
-import com.exemplo.model.Situacao;
+import com.dadoLivre.api.model.entities.Situacao;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface SituacaoRepository extends JpaRepository<Situacao, String> {
+import java.util.UUID;
+
+public interface SituacaoRepository extends JpaRepository<Situacao, UUID> {
 }
