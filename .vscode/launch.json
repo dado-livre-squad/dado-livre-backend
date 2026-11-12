@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "dado-livre-backend",
+            "request": "launch",
+            "mainClass": "com..dadoLivre.api.Startup",
+            "projectName": "dado-livre-backend",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Startup<dadolivre>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.dadoLivre.api.Startup",
+            "projectName": "dadolivre",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
