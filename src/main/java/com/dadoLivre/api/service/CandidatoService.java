@@ -40,7 +40,6 @@ public class CandidatoService {
             return new CandidatoResponseDTO(
                     candidato.getIdcandidato(),
                     candidato.getNomesocial(),
-                    candidato.getFoto(),
                     cargoDto,
                     partidoDto
             );
