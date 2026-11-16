@@ -1,19 +1,19 @@
 package com.dadoLivre.api.service;
 
 import com.dadoLivre.api.dto.estado.EstadoResponseDTO;
-import com.dadoLivre.api.model.entities.Estado;
 import com.dadoLivre.api.repository.EstadoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class EstadoService {
 
-    @Autowired
-    public EstadoRepository repository;
+    public final EstadoRepository repository;
+
+    EstadoService(EstadoRepository repository) {
+        this.repository = repository;
+    }
 
     public List<EstadoResponseDTO> listarEstados() {
         return repository.listarEstados()
