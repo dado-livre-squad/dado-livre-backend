@@ -2,7 +2,6 @@ package com.dadoLivre.api.controller;
 
 import com.dadoLivre.api.model.entities.Situacao;
 import com.dadoLivre.api.service.SituacaoService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +14,11 @@ import java.util.UUID;
 @RequestMapping("api/situacao")
 public class SituacaoController {
 
-    @Autowired
-    public SituacaoService service;
+    public final SituacaoService service;
+
+    SituacaoController(SituacaoService service) {
+        this.service = service;
+    }
 
     @GetMapping("v1")
     public List<Situacao> findAll() {

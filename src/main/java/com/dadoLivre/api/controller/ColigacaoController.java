@@ -1,10 +1,8 @@
 package com.dadoLivre.api.controller;
 
-import com.dadoLivre.api.dto.partido.PartidoRequestDTO;
 import com.dadoLivre.api.dto.partido.PartidoResponseDTO;
 import com.dadoLivre.api.model.entities.Coligacao;
 import com.dadoLivre.api.service.ColigacaoService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,8 +15,11 @@ import java.util.UUID;
 @RequestMapping("api/coligacao")
 public class ColigacaoController {
 
-    @Autowired
-    public ColigacaoService service;
+    public final ColigacaoService service;
+
+    ColigacaoController(ColigacaoService service) {
+        this.service = service;
+    }
 
     @GetMapping("v1")
     public List<Coligacao> findAll() {

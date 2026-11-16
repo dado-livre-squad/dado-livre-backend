@@ -2,7 +2,6 @@ package com.dadoLivre.api.service;
 
 import com.dadoLivre.api.model.entities.EncarregadoDados;
 import com.dadoLivre.api.repository.EncarregadoDadosRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.ResourceAccessException;
 
@@ -12,8 +11,11 @@ import java.util.UUID;
 @Service
 public class EncarregadoDadosService {
 
-    @Autowired
-    public EncarregadoDadosRepository repository;
+    public final EncarregadoDadosRepository repository;
+
+    EncarregadoDadosService(EncarregadoDadosRepository repository) {
+        this.repository = repository;
+    }
 
     public List<EncarregadoDados> findAll() {
         return this.repository.findAll();

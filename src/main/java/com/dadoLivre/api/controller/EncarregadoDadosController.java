@@ -2,7 +2,6 @@ package com.dadoLivre.api.controller;
 
 import com.dadoLivre.api.model.entities.EncarregadoDados;
 import com.dadoLivre.api.service.EncarregadoDadosService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,8 +11,11 @@ import java.util.UUID;
 @RequestMapping("api/encarregado-dados")
 public class EncarregadoDadosController {
 
-    @Autowired
-    public EncarregadoDadosService service;
+    public final EncarregadoDadosService service;
+
+    EncarregadoDadosController(EncarregadoDadosService service) {
+        this.service = service;
+    }
 
     @GetMapping("v1")
     public List<EncarregadoDados> findAll() {
