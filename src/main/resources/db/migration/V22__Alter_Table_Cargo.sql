@@ -1,0 +1,2 @@
+ALTER TABLE cargo
+ADD car_tipo VARCHAR(10);
