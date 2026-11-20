@@ -1,5 +1,6 @@
 package com.dadoLivre.api.controller;
 
+import com.dadoLivre.api.dto.candidato.CandidateDetailsResponseDTO;
 import com.dadoLivre.api.dto.candidato.CandidatoResponseDTO;
 import com.dadoLivre.api.service.CandidatoFotoService;
 import com.dadoLivre.api.service.CandidatoService;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
 @RequestMapping("api/candidato")
@@ -32,6 +34,11 @@ public class CandidatoController {
     @GetMapping()
     public List<CandidatoResponseDTO> listarCandidatos() {
         return this.service.listarCandidatos();
+    }
+
+    @GetMapping("{id}")
+    public CandidateDetailsResponseDTO detalhesCandidato(@PathVariable("id") UUID id) {
+        return service.detalhesCandidato(id);
     }
 
     @GetMapping("{id}/foto")

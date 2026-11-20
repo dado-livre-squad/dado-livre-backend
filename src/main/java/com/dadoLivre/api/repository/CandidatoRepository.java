@@ -1,10 +1,12 @@
 package com.dadoLivre.api.repository;
 
+import com.dadoLivre.api.dto.candidato.CandidateDetailsProjection;
 import com.dadoLivre.api.dto.candidato.CandidatoReponseProjection;
 import com.dadoLivre.api.model.entities.Candidato;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 import java.util.UUID;
@@ -16,4 +18,10 @@ public interface CandidatoRepository extends JpaRepository<Candidato, UUID> {
         nativeQuery = true
     )
     public List<CandidatoReponseProjection> listarCandidatos();
+
+    @Query(
+        value = "SELECT * FROM detalhesCandidato(:id)",
+        nativeQuery = true
+    )
+    public CandidateDetailsProjection detalhesCandidato(@Param("id") UUID id);
 }
