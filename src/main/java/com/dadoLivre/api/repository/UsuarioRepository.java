@@ -7,8 +7,8 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import com.dadoLivre.api.dto.usuario.UsuarioByEmailProjection;
 import com.dadoLivre.api.model.entities.Usuario;
-import com.dadoLivre.api.model.enums.TipoUsuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, UUID> {
     @Modifying
@@ -23,4 +23,10 @@ public interface UsuarioRepository extends JpaRepository<Usuario, UUID> {
             @Param("hash") String senhaHash,
             @Param("tipo") String tipoUsuario
         );
+
+    @Query(
+        value = "SELECT * FROM usuarioPorEmail(:email)",
+        nativeQuery = true
+    )
+    UsuarioByEmailProjection usuarioPorEmail(String email);
 }
