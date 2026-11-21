@@ -2,8 +2,10 @@ package com.dadoLivre.api.service;
 
 import org.springframework.stereotype.Service;
 
+import com.dadoLivre.api.dto.usuario.UsuarioByEmailResponseDTO;
 import com.dadoLivre.api.dto.usuario.UsuarioRequestDTO;
 import com.dadoLivre.api.dto.usuario.UsuarioResponseDTO;
+import com.dadoLivre.api.exception.ResourceNotFoundException;
 import com.dadoLivre.api.repository.UsuarioRepository;
 import com.dadoLivre.api.security.HashingService;
 
@@ -47,5 +49,17 @@ public class UsuarioService {
             usuario.getEmail(),
             usuario.getTipo()
         );
+    }
+
+    public UsuarioByEmailResponseDTO usuarioPorEmail(String email) {
+        var usuario = repository.usuarioPorEmail(email);
+
+        if (usuario.equals(null)) throw new ResourceNotFoundException("Usuário não encontrado");
+
+        UsuarioByEmailResponseDTO dto = new UsuarioByEmailResponseDTO();
+        dto.setEmail(usuario.getEmail());
+        dto.setSenha(usuario.getSenha());
+
+        return dto;
     }
 }
