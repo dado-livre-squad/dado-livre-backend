@@ -27,10 +27,11 @@ public class LoginService {
 
     public LoginResponseDTO login(LoginRequestDTO dto) {
         var usuario = usuarioService.usuarioPorEmail(dto.getEmail());
+        var nomeUsuario = usuarioService.nomeUsuario(dto.getEmail());
         var isValidPassword = hashingService.compare(dto.getSenha(), usuario.getSenha());
 
         if (!isValidPassword) throw new UnathourizedException("Usuário ou senha inválidos.");
 
-        return new LoginResponseDTO(jwtService.gerar(usuario.getEmail()));
+        return new LoginResponseDTO(jwtService.gerar(usuario.getEmail(), nomeUsuario.getNome()));
     }  
 }

@@ -27,12 +27,13 @@ public class JwtService implements TokenService {
     }
 
     @Override
-    public String gerar(String subject) {
+    public String gerar(String subject, String nome) {
         Instant agora = Instant.now();
         
         return Jwts.builder()
                 .issuer(ISSUER)
                 .subject(subject)
+                .claim("nome", nome)
                 .issuedAt(Date.from(agora))
                 .expiration(Date.from(agora.plus(expiracao)))
                 .signWith(key) // HS256 para chave de 256 bits
