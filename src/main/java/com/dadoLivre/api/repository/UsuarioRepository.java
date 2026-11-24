@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import com.dadoLivre.api.dto.usuario.NomeUsuarioProjection;
 import com.dadoLivre.api.dto.usuario.UsuarioByEmailProjection;
 import com.dadoLivre.api.model.entities.Usuario;
 
@@ -29,4 +30,11 @@ public interface UsuarioRepository extends JpaRepository<Usuario, UUID> {
         nativeQuery = true
     )
     UsuarioByEmailProjection usuarioPorEmail(String email);
+
+
+    @Query(
+        value = "SELECT * FROM nomeUsuario(:emailUsuario)",
+        nativeQuery = true
+    )
+    NomeUsuarioProjection nomeUsuario(String emailUsuario);
 }

@@ -1,5 +1,6 @@
 package com.dadoLivre.api.exception.handler;
 
+import com.dadoLivre.api.exception.ConflicException;
 import com.dadoLivre.api.exception.ExceptionResponse;
 import com.dadoLivre.api.exception.ResourceNotFoundException;
 import com.dadoLivre.api.exception.UnathourizedException;
@@ -49,5 +50,16 @@ public class CustomEntityResponseHandler extends ResponseEntityExceptionHandler 
         );
 
         return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
+    }
+
+    @ExceptionHandler(ConflicException.class)
+    public final ResponseEntity<ExceptionResponse> handleConflictExceptions(Exception e, WebRequest request) {
+        ExceptionResponse response = new ExceptionResponse(
+                new Date(),
+                e.getMessage(),
+                request.getDescription(false)
+        );
+
+        return new ResponseEntity<>(response, HttpStatus.CONFLICT);
     }
 }
