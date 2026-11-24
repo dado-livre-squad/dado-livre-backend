@@ -7,9 +7,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dadoLivre.api.dto.usuario.NomeUsuarioRequestDTO;
+import com.dadoLivre.api.dto.usuario.NomeUsuarioResponseDTO;
 import com.dadoLivre.api.dto.usuario.UsuarioRequestDTO;
 import com.dadoLivre.api.dto.usuario.UsuarioResponseDTO;
 import com.dadoLivre.api.service.UsuarioService;
+
 
 @RestController
 @RequestMapping("api/usuario")
@@ -27,4 +30,10 @@ public class UsuarioController {
         ) {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.service.cadastrarUsuario(dto));
     }
+
+    @PostMapping("/nome")
+    public NomeUsuarioResponseDTO getMethodName(@RequestBody NomeUsuarioRequestDTO dto) {
+        return service.nomeUsuario(dto.getEmail());
+    }
+    
 }
